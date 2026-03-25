@@ -1,9 +1,4 @@
-import {
-  createInitialState,
-  setDirection,
-  step,
-  togglePause,
-} from "./gameLogic.js";
+const { createInitialState, setDirection, step, togglePause } = window.SnakeLogic;
 
 const TICK_MS = 140;
 const BOARD_SIZE = 20;

@@ -1,9 +1,4 @@
-import {
-  createInitialState,
-  setDirection,
-  spawnFood,
-  step,
-} from "../gameLogic.js";
+const { createInitialState, setDirection, spawnFood, step } = window.SnakeLogic;
 
 const resultsEl = document.querySelector("#results");
 let passed = 0;
