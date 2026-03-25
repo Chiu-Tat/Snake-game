@@ -16,9 +16,14 @@
   function createInitialState(config = {}, rng = Math.random) {
     const width = config.width ?? 20;
     const height = config.height ?? 20;
-    const initialSnake = config.initialSnake ?? [
-      { x: Math.floor(width / 2), y: Math.floor(height / 2) },
+    const centerX = Math.floor(width / 2);
+    const centerY = Math.floor(height / 2);
+    const fallbackSnake = [
+      { x: centerX, y: centerY },
+      { x: Math.max(0, centerX - 1), y: centerY },
+      { x: Math.max(0, centerX - 2), y: centerY },
     ];
+    const initialSnake = config.initialSnake ?? fallbackSnake;
     const direction = config.initialDirection ?? "right";
     const snake = copySnake(initialSnake);
     const food = spawnFood(width, height, snake, rng);

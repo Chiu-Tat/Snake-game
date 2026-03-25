@@ -48,6 +48,7 @@ h1 {
   grid-template-columns: repeat(20, 1fr);
   grid-template-rows: repeat(20, 1fr);
   width: 100%;
+  height: min(92vw, 520px);
   aspect-ratio: 1 / 1;
   border: 1px solid var(--border);
   background: var(--board-bg);
