@@ -1,0 +1,94 @@
+:root {
+  --bg: #f5f5f0;
+  --text: #1a1a1a;
+  --board-bg: #ffffff;
+  --border: #d3d3cc;
+  --snake: #2f7d32;
+  --food: #cf3b24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+}
+
+.app {
+  width: min(92vw, 520px);
+  display: grid;
+  gap: 0.8rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.hud p {
+  margin: 0;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border);
+  background: var(--board-bg);
+}
+
+.cell {
+  border: 1px solid #f4f4f0;
+}
+
+.cell.snake {
+  background: var(--snake);
+}
+
+.cell.food {
+  background: var(--food);
+}
+
+.controls,
+.touch-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.touch-controls {
+  flex-direction: column;
+}
+
+.touch-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
